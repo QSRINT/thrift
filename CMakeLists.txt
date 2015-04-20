@@ -55,6 +55,10 @@ include(ConfigureChecks)
 # Package it
 include(CPackConfig)
 
+if (Boost_FOUND)
+    # Disable automatic boost linking in VS
+    add_definitions("-DBOOST_ALL_NO_LIB")
+endif()
 
 find_package(Threads)
 
